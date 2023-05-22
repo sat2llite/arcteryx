@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans KR";
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: middle;
+}
+
+#wrap {
+  width: 100%;
+  height: auto;
+}
+
+.inner {
+  width: 90%;
+  height: auto;
+  margin: auto;
+}
+
+#header {
+  width: 100%;
+  height: 160px;
+}
+#header .banner {
+  width: 100%;
+  height: 30px;
+  background: #000;
+}
+#header .banner .banner_ul {
+  position: relative;
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  line-height: 26px;
+}
+#header .banner .banner_li a {
+  color: #fff;
+  font-size: 14px;
+}
+#header .banner .banner_li::after {
+  position: absolute;
+  top: 9px;
+  margin-left: 10px;
+  content: "";
+  width: 1px;
+  height: 12px;
+  background: #fff;
+}
+#header .banner .banner_li:nth-child(2)::after {
+  display: none;
+}
+#header .header01 {
+  width: 100%;
+  height: 30px;
+  background: #ddd;
+}
+#header .header01 .header01_ul {
+  display: flex;
+  justify-content: end;
+  column-gap: 20px;
+}
+#header .header01 .header01_li {
+  line-height: 26px;
+}
+#header .header01 .header01_li a {
+  font-size: 14px;
+}
+#header .header02 {
+  position: relative;
+  display: flex;
+  height: 100px;
+  border: 1px solid #000;
+}
+#header .header02 .gnb {
+  position: absolute;
+  left: 300px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#header .header02 .gnb_ul {
+  display: flex;
+  column-gap: 20px;
+}
+
+/*# sourceMappingURL=style.css.map */
