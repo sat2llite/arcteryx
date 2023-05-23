@@ -1,9 +1,39 @@
+body.no_scroll {
+  overflow: hidden !important
+}
+body::-webkit-scrollbar {
+  width: 5px;  /* 스크롤바의 너비 */
+}
+
+body::-webkit-scrollbar-thumb {
+  height: 30%; /* 스크롤바의 길이 */
+  background: #fff; /* 스크롤바의 색상 */
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  // background: rgba(#000, 100%);
+  background: #000;
+}
+
 #wrap {
   width: 100%;
-  height: auto;
+  height: 100%;
+  background: #000;
 }
 .inner {
   width: 90%;
   margin: auto;
   // border: 1px solid red;
+}
+h2.title {
+  margin-bottom: 80px;
+  font-size: 40px;
+  font-weight: 900;
+  text-align: center;
+}
+.flex_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

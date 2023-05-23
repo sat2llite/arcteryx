@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
 * {
   padding: 0;
@@ -19,9 +20,28 @@ img {
   vertical-align: middle;
 }
 
+body.no_scroll {
+  overflow: hidden !important;
+}
+
+body::-webkit-scrollbar {
+  width: 5px; /* 스크롤바의 너비 */
+}
+
+body::-webkit-scrollbar-thumb {
+  height: 30%; /* 스크롤바의 길이 */
+  background: #fff; /* 스크롤바의 색상 */
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #000;
+}
+
 #wrap {
   width: 100%;
-  height: auto;
+  height: 100%;
+  background: #000;
 }
 
 .inner {
@@ -29,31 +49,240 @@ img {
   margin: auto;
 }
 
-#header {
-  position: sticky;
-  top: 0;
-  height: 130px;
-  width: 100%;
-  border-radius: 0;
+h2.title {
+  margin-bottom: 80px;
+  font-size: 40px;
+  font-weight: 900;
+  text-align: center;
 }
-#header .banner {
-  height: 30px;
+
+.flex_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#header {
+  height: 100px;
   width: 100%;
   border-radius: 0;
+  position: sticky;
+  padding-top: 10px;
+  top: -10px;
+  z-index: 99;
   background: #000;
 }
-#header .banner .banner_ul {
+#header .header02 {
+  height: 100px;
+  width: 100%;
+  border-radius: 0;
   position: relative;
   display: flex;
+  color: #fff;
+  background: #000;
+}
+#header .header02 .gnb {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+}
+#header .header02 .gnb .header_logo {
+  display: inline-block;
+  filter: invert(100);
+}
+#header .header02 .gnb .m_header_ul {
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  z-index: 1;
+  visibility: hidden;
+  transition: 0.5s;
+}
+#header .header02 .gnb .m_header_ul li a {
+  display: block;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 30px 0;
+}
+#header .header02 .gnb .hamburger {
+  z-index: 2;
+}
+#header .header02 .gnb .hamburger span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: #fff;
+  transition: transform 0.3s;
+}
+#header .header02 .gnb .hamburger.on span:nth-child(1) {
+  transform: rotate(-45deg);
+  margin-top: 8px;
+}
+#header .header02 .gnb .hamburger.on span:nth-child(2) {
+  transform: rotate(45deg);
+  margin-top: -2px;
+}
+#header .header02 .gnb .hamburger.on span:nth-child(3) {
+  opacity: 0;
+}
+#header .header02 .gnb .hamburger span + span {
+  margin-top: 8px;
+}
+
+#contents {
+  height: auto;
+  width: 100%;
+  border-radius: 0;
+}
+#contents #section01 {
+  height: 100vh;
+  width: 100%;
+  border-radius: 0;
+  margin-top: -100px;
+  padding: 100px 0;
+  overflow: hidden;
+}
+#contents #section01 .slide {
+  display: flex;
+  column-gap: 20px;
+  margin-left: 200px;
+  margin-top: 130px;
+}
+#contents #section02 {
+  height: 100vh;
+  width: 100%;
+  border-radius: 0;
+  padding: 100px 0;
+  color: #fff;
+  background: #000;
+}
+#contents #section02 .section02_wrap {
+  width: 96%;
+  margin: auto;
+}
+#contents #section02 .section02_wrap .box_wrap {
+  display: flex;
+  column-gap: 30px;
+}
+#contents #section02 .section02_box {
+  height: 600px;
+  width: 33.33%;
+  border-radius: 0;
+  background: #fff;
+}
+#contents #section02 .box01, #contents #section02 .box02, #contents #section02 .box03 {
+  background: #000;
+  background: url("../img/220823_S23_Bouldering_TheFarm_Lebeau_01767web_2x.png") no-repeat center/cover;
+}
+#contents #section03 {
+  height: auto;
+  width: 100%;
+  border-radius: 0;
+  padding: 100px 0;
+  color: #fff;
+  background: #000;
+  border: 1px solid white;
+}
+#contents #section03 .section03_wrap {
+  position: relative;
+  width: 96%;
+  height: 100%;
+  margin: auto;
+}
+#contents #section03 .section03_wrap .card_wrap {
+  width: 70%;
+  margin: auto;
+}
+#contents #section03 .section03_wrap .card {
+  width: 100%;
+  height: 500px;
+}
+#contents #section03 .section03_wrap .card01 {
+  height: 100%;
+  background: #868686;
+}
+#contents #section03 .section03_wrap .card02 {
+  top: 0;
+  background: #b9b9b9;
+}
+#contents #section03 .section03_wrap .card03 {
+  top: 0;
+  background: #e2e2e2;
+}
+#contents #section04 {
+  height: 100vh;
+  width: 100%;
+  border-radius: 0;
+  padding: 100px 0;
+  color: #fff;
+  background: #000;
+}
+#contents #section04 .section04_wrap {
+  width: 96%;
+  margin: auto;
+}
+#contents #section04 .section04_wrap .box_wrap {
+  display: flex;
+  column-gap: 30px;
+}
+#contents #section04 .section04_wrap .section04_box {
+  height: 600px;
+  width: 33.33%;
+  border-radius: 0;
+  background: #fff;
+}
+#contents #section04 .section04_wrap .box01, #contents #section04 .section04_wrap .box02, #contents #section04 .section04_wrap .box03 {
+  background: #000;
+  background: url("../img/220823_S23_Bouldering_TheFarm_Lebeau_01767web_2x.png") no-repeat center/cover;
+}
+
+#footer {
+  height: 500px;
+  width: 100%;
+  border-radius: 0;
+  color: #fff;
+}
+#footer .inner, #footer .footer_wrap {
+  height: 100%;
+}
+#footer .footer_top {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 50px 0;
+  border-bottom: 1px solid #6b6b6b;
+}
+#footer .footer_top .footer_logo {
+  display: inline-block;
+  filter: invert(100);
+}
+#footer .footer_top .footer_menu {
+  width: 70%;
+}
+#footer .footer_top .footer_menu_ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+#footer .footer_top .footer_menu_li {
+  width: 33.33%;
+  padding: 20px 0;
+}
+#footer .footer_bottom {
+  padding-top: 40px;
+  flex-direction: column;
+  row-gap: 20px;
+}
+#footer .footer_bottom .footer_bottom_ul {
+  position: relative;
   column-gap: 20px;
   line-height: 26px;
 }
-#header .banner .banner_li a {
-  color: #fff;
-  font-size: 14px;
-}
-#header .banner .banner_li::after {
+#footer .footer_bottom .footer_bottom_li::after {
   position: absolute;
   top: 9px;
   margin-left: 10px;
@@ -62,60 +291,8 @@ img {
   height: 12px;
   background: #fff;
 }
-#header .banner .banner_li:nth-child(2)::after {
+#footer .footer_bottom .footer_bottom_li:last-child::after {
   display: none;
-}
-#header .header02 {
-  height: 100px;
-  width: 100%;
-  border-radius: 0;
-  position: relative;
-  display: flex;
-  border: 1px solid #000;
-  color: #fff;
-  background: #000;
-}
-#header .header02 .gnb {
-  display: flex;
-  align-items: center;
-}
-#header .header02 .gnb .header_logo {
-  display: inline-block;
-  filter: invert(100);
-}
-#header .header02 .gnb .gnb_wrap {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-#header .header02 .gnb .gnb_ul {
-  display: flex;
-  column-gap: 20px;
-  margin-left: 100px;
-}
-#header .header02 .gnb .right_gnb {
-  display: flex;
-  column-gap: 20px;
-}
-
-#contents {
-  height: 100vh;
-  width: 100%;
-  border-radius: 0;
-}
-#contents #section01 {
-  height: 100vh;
-  width: 100%;
-  border-radius: 0;
-  margin-top: -130px;
-  border: 1px solid red;
-  padding: 100px 0;
-  overflow: hidden;
-}
-#contents #section01 .slide {
-  display: flex;
-  margin-left: 200px;
-  margin-top: 130px;
 }
 
 /*# sourceMappingURL=style.css.map */
