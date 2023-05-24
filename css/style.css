@@ -146,15 +146,31 @@ h2.title {
   height: 100vh;
   width: 100%;
   border-radius: 0;
+  position: relative;
   margin-top: -100px;
-  padding: 100px 0;
+  padding: 50px 0;
   overflow: hidden;
 }
-#contents #section01 .slide {
-  display: flex;
-  column-gap: 20px;
+#contents #section01 .slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
   margin-left: 200px;
   margin-top: 130px;
+  overflow: hidden;
+}
+#contents #section01 .slider .slide_ul {
+  position: absolute;
+  display: flex;
+  column-gap: 20px;
+  left: 0;
+  top: 0;
+  transition: 0.5s;
+}
+#contents #section01 .slider .slide_li img {
+  width: 1200px;
+  height: 700px;
+  object-fit: cover;
 }
 #contents #section02 {
   height: 100vh;
@@ -163,6 +179,7 @@ h2.title {
   padding: 100px 0;
   color: #fff;
   background: #000;
+  overflow: hidden;
 }
 #contents #section02 .section02_wrap {
   width: 96%;
@@ -178,9 +195,15 @@ h2.title {
   border-radius: 0;
   background: #fff;
 }
-#contents #section02 .box01, #contents #section02 .box02, #contents #section02 .box03 {
-  background: #000;
-  background: url("../img/220823_S23_Bouldering_TheFarm_Lebeau_01767web_2x.png") no-repeat center/cover;
+#contents #section02 .box01 {
+  background: url("../img/main_banner_etc_01_230309.jpg") no-repeat center/cover;
+}
+#contents #section02 .box02 {
+  transform: translateY(200px);
+  background: url("../img/main_banner_etc_02_230502.jpg") no-repeat center/cover;
+}
+#contents #section02 .box03 {
+  background: url("../img/main_banner_etc_03_230508.jpg") no-repeat center/cover;
 }
 #contents #section03 {
   height: auto;

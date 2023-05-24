@@ -18,3 +18,63 @@ hamburgerIcon.addEventListener("click", () => {
     gnb.style.visibility = "visible";
   }
 });
+
+
+// 슬라이더
+const slides = document.querySelector(".slide_ul");
+const slideImg = document.querySelectorAll(".slide_li");
+const imgWidth = slideImg[0].children[0].offsetWidth; // 이미지 가로길이
+const slideCount = slideImg.length;
+
+slides.style.width = `${imgWidth * (slideCount + 2)}px`;
+// 양 옆에 복사해 넣을 것도 고려해야 함
+
+let currentIndex = 0; // 현재 슬라이드 index
+let speed = 0.5;
+
+function makeClone() {
+  let clone_first = slideImg[0].cloneNode(true);
+  let clone_last = slides.lastElementChild.cloneNode(true);
+  slides.append(clone_first);
+  // slides.prepend(clone_last);
+  slides.firstElementChild.before(clone_last); // 위 코드와 동일
+  // ul안에 있는 첫 번째 자식 앞에 마지막 것을 복사하여 집어넣음
+}
+
+function initFunction() {
+  slides.style.width = `${imgWidth * (slideCount + 2)}px`;
+  slides.style.left = `-${imgWidth + 20}px`;
+}
+
+function next() {
+  if (currentIndex < slideCount) {
+    // 마지막 슬라이더일때 까지만(colgap 20px - 양쪽 40px 추가)
+    slides.style.left = `-${(currentIndex + 2) * imgWidth + 40}px`;
+    // 처음 상태부터 1만큼 왼쪽에 가 있는 상태에서 시작
+    slides.style.transition = `${speed}s ease-out`;
+  }
+  if (currentIndex === slideCount - 1) {
+    // 마지막 슬라이더일때
+    setTimeout(function () {
+      // 위치값 처음으로 한번에 변경
+      slides.style.left = `-${imgWidth}px`;
+      slides.style.transition = `${0}s ease-out`;
+    }, 500);
+    currentIndex = -1;
+  }
+  currentIndex += 1;
+  console.log("currentIndex는? : ", currentIndex);
+}
+
+makeClone(); // 이미지들을 복사해서 앞 뒤에 붙여 넣는 함수
+initFunction(); // 초기화 해주는 함수
+
+setInterval(next, 3000);
+
+
+
+// section02 box scroll 이벤트
+const section02 = document.querySelector("#section02");
+const boxWrap = document.querySelector(".box_wrap");
+const boxes = document.querySelectorAll(".section02_box");
+const box02 = document.querySelector(".box02");
