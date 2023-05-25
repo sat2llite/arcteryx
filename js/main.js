@@ -68,15 +68,11 @@ initFunction(); // 초기화 해주는 함수
 
 setInterval(next, 3000);
 
-
-
 // section02 box scroll 이벤트
 const section02 = document.querySelector("#section02");
 const boxWrap = document.querySelector(".box_wrap");
 const boxes = document.querySelectorAll(".section02_box");
 const box02 = document.querySelector(".box02");
-
-
 
 // section03 card scroll 이벤트
 let card1 = document.querySelector(".card01"),
@@ -84,48 +80,49 @@ let card1 = document.querySelector(".card01"),
   card3 = document.querySelector(".card03");
 
 window.addEventListener("scroll", function () {
-  console.log(scrollY);
+  console.log(document.documentElement.scrollTop);
   // card01
-  if (scrollY > 1500) {
-    card1.style.transform = "scale(0.9)";
+  if (scrollY < 1400) {
     card1.style.opacity = "1";
-  } else card1.style.transform = "scale(1)";
-
-  if (scrollY > 1700) {
     card1.style.transform = "scale(0.8)";
-    card1.style.opacity = "0.5";
-  }
-  
-  if (scrollY > 2000) {
-    card1.style.opacity = "0";
-  }
+  } 
+  else if (scrollY >= 1400 && scrollY < 2300) {
+    card1.style.opacity = "1";
+    card1.style.transform = "scale(1)";
+  } 
+  else if (scrollY >= 2300 && scrollY < 3500) {
+    card1.style.opacity = "1";
+    card1.style.transform = "scale(0.8)";
+  } 
+  else card1.style.opacity = "0";
 
   // card02
-  if (scrollY > 1900) {
-    card2.style.transform = "scale(0.9)";
+  if (scrollY < 1900) {
     card2.style.opacity = "1";
-  } else card2.style.transform = "scale(1)";
-
-  if (scrollY > 2100) {
     card2.style.transform = "scale(0.8)";
-    card2.style.opacity = "0.5";
   } 
-
-  if (scrollY > 2300) {
-    card2.style.opacity = "0";
-  }
+  else if (scrollY >= 1900 && scrollY < 2900) {
+    card2.style.transform = "scale(1)";
+    card2.style.opacity = "1";
+  } 
+  else if (scrollY >= 2900 && scrollY < 4100) {
+    card2.style.opacity = "1";
+    card2.style.transform = "scale(0.8)";
+  } 
+  else card2.style.opacity = "0";
 
   // card03
-  if (scrollY > 2300) {
-    card3.style.transform = "scale(0.9)";
+  if (scrollY < 2500) {
     card3.style.opacity = "1";
-  } else card3.style.transform = "scale(1)";
-  if (scrollY > 2500) {
     card3.style.transform = "scale(0.8)";
-    card3.style.opacity = "0.5";
   } 
-
-  if (scrollY > 2700) {
-    card3.style.opacity = "0";
-  }
+  else if (scrollY >= 2500 && scrollY < 3400) {
+    card3.style.opacity = "1";
+    card3.style.transform = "scale(1)";
+  } 
+  else if (scrollY >= 3400 && scrollY < 4600) {
+    card3.style.opacity = "1";
+    card3.style.transform = "scale(0.8)";
+  } 
+  else card3.style.opacity = "0";
 });

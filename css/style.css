@@ -206,15 +206,15 @@ h2.title {
   background: url("../img/main_banner_etc_03_230508.jpg") no-repeat center/cover;
 }
 #contents #section03 {
-  height: 100vh;
+  height: 2000px;
   width: 100%;
   border-radius: 0;
+  padding: 100px 0;
   color: #fff;
   background: #000;
   border: 1px solid white;
 }
 #contents #section03 .section03_wrap {
-  position: relative;
   width: 96%;
   height: 100%;
   margin: auto;
@@ -222,31 +222,27 @@ h2.title {
 #contents #section03 .section03_wrap .card_wrap {
   position: sticky;
   top: 0;
-  border: 1px solid yellow;
   width: 70%;
-  height: 600px;
+  height: 100%;
   margin: auto;
 }
 #contents #section03 .section03_wrap .card {
   position: sticky;
-  top: 1rem;
+  top: 0;
   width: 100%;
-  height: 100%;
+  height: 600px;
   transition: all 0.5s;
 }
 #contents #section03 .section03_wrap .card01 {
-  position: absolute;
-  top: 0;
+  display: block;
   background: #868686;
 }
 #contents #section03 .section03_wrap .card02 {
-  position: absolute;
-  top: 100px;
+  display: block;
   background: #b9b9b9;
 }
 #contents #section03 .section03_wrap .card03 {
-  position: absolute;
-  top: 200px;
+  display: block;
   background: #e2e2e2;
 }
 #contents #section04 {
