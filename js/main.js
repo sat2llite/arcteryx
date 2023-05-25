@@ -79,14 +79,17 @@ let card1 = document.querySelector(".card01"),
   card2 = document.querySelector(".card02"),
   card3 = document.querySelector(".card03");
 
+const section03 = document.querySelector("#section03");
+const section04 = document.querySelector("#section04");
+
 window.addEventListener("scroll", function () {
   console.log(document.documentElement.scrollTop);
   // card01
-  if (scrollY < 1400) {
+  if (scrollY < 1300) {
     card1.style.opacity = "1";
     card1.style.transform = "scale(0.8)";
   } 
-  else if (scrollY >= 1400 && scrollY < 2300) {
+  else if (scrollY >= 1300 && scrollY < 2300) {
     card1.style.opacity = "1";
     card1.style.transform = "scale(1)";
   } 
@@ -94,7 +97,7 @@ window.addEventListener("scroll", function () {
     card1.style.opacity = "1";
     card1.style.transform = "scale(0.8)";
   } 
-  else card1.style.opacity = "0";
+  // else card1.style.opacity = "0";
 
   // card02
   if (scrollY < 1900) {
@@ -109,20 +112,20 @@ window.addEventListener("scroll", function () {
     card2.style.opacity = "1";
     card2.style.transform = "scale(0.8)";
   } 
-  else card2.style.opacity = "0";
+  // else card2.style.opacity = "0";
 
   // card03
   if (scrollY < 2500) {
     card3.style.opacity = "1";
     card3.style.transform = "scale(0.8)";
   } 
-  else if (scrollY >= 2500 && scrollY < 3400) {
+  else if (scrollY >= 2500 && scrollY < 3100) {
     card3.style.opacity = "1";
     card3.style.transform = "scale(1)";
   } 
-  else if (scrollY >= 3400 && scrollY < 4600) {
+  else if (scrollY >= 3100 && scrollY < 4600) {
     card3.style.opacity = "1";
     card3.style.transform = "scale(0.8)";
   } 
-  else card3.style.opacity = "0";
+  // else card3.style.opacity = "0";
 });
