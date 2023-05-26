@@ -185,12 +185,13 @@
     .section02_box {
       @include set-box(600px, 33.33%);
       background: #fff;
+      transition: .5s;
     }
+    .box {transform: translateY(100px);}
     .box01 {
       background: url("../img/main_banner_etc_01_230309.jpg") no-repeat center / cover;
     }
     .box02 {
-      transform: translateY(200px);
       background: url("../img/main_banner_etc_02_230502.jpg") no-repeat center / cover;
     }
     .box03 {
@@ -335,4 +336,15 @@
     }
     .footer_bottom_li:last-child::after { display: none; }
   }
+}
+
+
+@media #{$mobile} {
+  
+}
+@media #{$tablet} {
+
+}
+@media #{$pc} {
+
 }

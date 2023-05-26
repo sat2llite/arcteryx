@@ -1,5 +1,3 @@
-// 스크롤 조절
-
 // 햄버거 메뉴
 const hamburgerMenu = document.querySelector(".m_header_ul");
 const hamburgerIcon = document.querySelector(".hamburger");
@@ -70,11 +68,38 @@ initFunction(); // 초기화 해주는 함수
 
 setInterval(next, 3000);
 
+
+
+
 // section02 box scroll 이벤트
 const section02 = document.querySelector("#section02");
 const boxWrap = document.querySelector(".box_wrap");
-const boxes = document.querySelectorAll(".section02_box");
+const boxes = document.querySelectorAll(".box");
 const box02 = document.querySelector(".box02");
+
+let scroll = 100;
+// devices 스크롤 시 움직임
+window.addEventListener("wheel", (event) => {
+  boxes.forEach((item) => {
+    if (event.deltaY > 0) {
+      if (scroll < 0) {
+        item.style.transform = `translateY(0px)`;
+        scroll = 0;
+      } else if (scroll >= 0) {
+        item.style.transform = `translateY(${(scroll -= 10)}px)`;
+      }
+    } else {
+      if (scroll >= 100) {
+        item.style.transform = `translateY(0px)`;
+        scroll = 100;
+      } else if (scroll < 100) {
+        item.style.transform = `translateY(${(scroll += 10)}px)`;
+      }
+    }
+  });
+});
+
+
 
 // section03 card scroll 이벤트
 let card1 = document.querySelector(".card01"),
@@ -84,7 +109,7 @@ let card1 = document.querySelector(".card01"),
 const section03 = document.querySelector("#section03");
 const section04 = document.querySelector("#section04");
 
-window.addEventListener("scroll", function () {
+window.addEventListener("scroll", () => {
   console.log(document.documentElement.scrollTop);
   // card01
   if (scrollY < 1300) {
@@ -97,7 +122,7 @@ window.addEventListener("scroll", function () {
   } 
   else if (scrollY >= 2300 && scrollY < 3500) {
     card1.style.opacity = "1";
-    card1.style.transform = "scale(0.8)";
+    card1.style.transform = "scale(0.7)";
   } 
   // else card1.style.opacity = "0";
 
@@ -112,7 +137,7 @@ window.addEventListener("scroll", function () {
   } 
   else if (scrollY >= 2900 && scrollY < 4100) {
     card2.style.opacity = "1";
-    card2.style.transform = "scale(0.8)";
+    card2.style.transform = "scale(0.75)";
   } 
   // else card2.style.opacity = "0";
 

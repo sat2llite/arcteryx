@@ -194,12 +194,15 @@ h2.title {
   width: 33.33%;
   border-radius: 0;
   background: #fff;
+  transition: 0.5s;
+}
+#contents #section02 .box {
+  transform: translateY(100px);
 }
 #contents #section02 .box01 {
   background: url("../img/main_banner_etc_01_230309.jpg") no-repeat center/cover;
 }
 #contents #section02 .box02 {
-  transform: translateY(200px);
   background: url("../img/main_banner_etc_02_230502.jpg") no-repeat center/cover;
 }
 #contents #section02 .box03 {
