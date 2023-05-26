@@ -92,16 +92,16 @@ window.addEventListener("wheel", (event) => {
   }
 
   boxes.forEach((item) => {
-    item.style.transform = `translateY(${scroll}px})`;
+    item.style.transform = `translateY(${scroll}px)`;
   });
 });
 
 
 
 // section03 card scroll 이벤트
-let card1 = document.querySelector(".card01"),
-  card2 = document.querySelector(".card02"),
-  card3 = document.querySelector(".card03");
+let card1 = document.querySelector(".card01")
+let card2 = document.querySelector(".card02")
+let card3 = document.querySelector(".card03");
 
 const section03 = document.querySelector("#section03");
 const section04 = document.querySelector("#section04");
