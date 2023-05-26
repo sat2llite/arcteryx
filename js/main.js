@@ -68,9 +68,6 @@ initFunction(); // 초기화 해주는 함수
 
 setInterval(next, 3000);
 
-
-
-
 // section02 box scroll 이벤트
 const section02 = document.querySelector("#section02");
 const boxWrap = document.querySelector(".box_wrap");
@@ -80,22 +77,22 @@ const box02 = document.querySelector(".box02");
 let scroll = 100;
 // devices 스크롤 시 움직임
 window.addEventListener("wheel", (event) => {
-  boxes.forEach((item) => {
-    if (event.deltaY > 0) {
-      if (scroll < 0) {
-        item.style.transform = `translateY(0px)`;
-        scroll = 0;
-      } else if (scroll >= 0) {
-        item.style.transform = `translateY(${(scroll -= 10)}px)`;
-      }
-    } else {
-      if (scroll >= 100) {
-        item.style.transform = `translateY(0px)`;
-        scroll = 100;
-      } else if (scroll < 100) {
-        item.style.transform = `translateY(${(scroll += 10)}px)`;
-      }
+  if (event.deltaY > 0) {
+    if (scroll < 0) {
+      scroll = 0;
+    } else if (scroll >= 0) {
+      scroll -= 10;
     }
+  } else {
+    if (scroll > 100) {
+      scroll = 100;
+    } else if (scroll < 100) {
+      scroll += 10;
+    }
+  }
+
+  boxes.forEach((item) => {
+    item.style.transform = `translateY(${scroll}px})`;
   });
 });
 
@@ -110,49 +107,42 @@ const section03 = document.querySelector("#section03");
 const section04 = document.querySelector("#section04");
 
 window.addEventListener("scroll", () => {
-  console.log(document.documentElement.scrollTop);
   // card01
   if (scrollY < 1300) {
     card1.style.opacity = "1";
     card1.style.transform = "scale(0.8)";
-  } 
-  else if (scrollY >= 1300 && scrollY < 2300) {
+  } else if (scrollY >= 1300 && scrollY < 2300) {
     card1.style.opacity = "1";
     card1.style.transform = "scale(1)";
-  } 
-  else if (scrollY >= 2300 && scrollY < 3500) {
+  } else if (scrollY >= 2300 && scrollY < 3500) {
     card1.style.opacity = "1";
     card1.style.transform = "scale(0.7)";
-  } 
+  }
   // else card1.style.opacity = "0";
 
   // card02
   if (scrollY < 1900) {
     card2.style.opacity = "1";
     card2.style.transform = "scale(0.8)";
-  } 
-  else if (scrollY >= 1900 && scrollY < 2900) {
+  } else if (scrollY >= 1900 && scrollY < 2900) {
     card2.style.transform = "scale(1)";
     card2.style.opacity = "1";
-  } 
-  else if (scrollY >= 2900 && scrollY < 4100) {
+  } else if (scrollY >= 2900 && scrollY < 4100) {
     card2.style.opacity = "1";
     card2.style.transform = "scale(0.75)";
-  } 
+  }
   // else card2.style.opacity = "0";
 
   // card03
   if (scrollY < 2500) {
     card3.style.opacity = "1";
     card3.style.transform = "scale(0.8)";
-  } 
-  else if (scrollY >= 2500 && scrollY < 3100) {
+  } else if (scrollY >= 2500 && scrollY < 3100) {
     card3.style.opacity = "1";
     card3.style.transform = "scale(1)";
-  } 
-  else if (scrollY >= 3100 && scrollY < 4600) {
+  } else if (scrollY >= 3100 && scrollY < 4600) {
     card3.style.opacity = "1";
     card3.style.transform = "scale(0.8)";
-  } 
+  }
   // else card3.style.opacity = "0";
 });
