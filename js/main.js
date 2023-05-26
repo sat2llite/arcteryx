@@ -1,3 +1,5 @@
+// 스크롤 조절
+
 // 햄버거 메뉴
 const hamburgerMenu = document.querySelector(".m_header_ul");
 const hamburgerIcon = document.querySelector(".hamburger");

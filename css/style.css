@@ -213,7 +213,6 @@ h2.title {
   padding: 100px 0;
   color: #fff;
   background: #000;
-  border: 1px solid white;
 }
 #contents #section03 .section03_wrap {
   width: 96%;
@@ -235,17 +234,17 @@ h2.title {
 }
 #contents #section03 .section03_wrap .card01 {
   display: block;
-  background: #868686;
+  background: url("../img/mens-alpine-and-rock-climbing.jpg") no-repeat right/cover;
 }
 #contents #section03 .section03_wrap .card02 {
   top: 8rem;
   display: block;
-  background: #b9b9b9;
+  background-image: url("../img/R6vjWvQo.avif");
 }
 #contents #section03 .section03_wrap .card03 {
   top: 12rem;
   display: block;
-  background: #e2e2e2;
+  background: url("../img/220918_S23Hike_Pemby_Saunders_S5_8186shrp_1472x550.avif");
 }
 #contents #section04 {
   height: 100vh;
