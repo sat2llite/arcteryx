@@ -319,11 +319,23 @@
       }
       .section04_box {
         @include set-box(600px, 33.33%);
-        background: #fff;
+        text-align: center;
+
+        li {
+          line-height: 30px;
+          margin-top: 20px;
+
+          i {
+            margin: 30p   ;
+          }
+        }
+        li:nth-child(2) {
+          font-size: 20px;
+        }
+
       }
       .box01, .box02, .box03 {
-        background: #000;
-        background: url("../img/220823_S23_Bouldering_TheFarm_Lebeau_01767web_2x.png") no-repeat center / cover;
+        
       }
     }
   }
